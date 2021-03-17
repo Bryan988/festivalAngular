@@ -14,6 +14,7 @@ export class FestivalDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.nameControl = new FormControl(this.festival.name)
+    this.nameControl.valueChanges.subscribe((name)=>{this.festival.name = name})
   }
   valid():void{
     this.festival.name=this.nameControl.value;
